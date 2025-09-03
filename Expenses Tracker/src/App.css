@@ -3,6 +3,7 @@ body {
   background: #f5f5f5;
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
 }
 
 .app {
@@ -107,4 +108,11 @@ li {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.actions button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
 }
