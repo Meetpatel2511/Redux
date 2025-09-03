@@ -68,6 +68,7 @@ function App() {
           <option value="Food">Food</option>
           <option value="Travel">Travel</option>
           <option value="Shopping">Shopping</option>
+          <option value="Salary">Salary</option>
           <option value="Other">Other</option>
         </select>
         <input
@@ -92,8 +93,8 @@ function App() {
               <p className={t.type === "Income" ? "green" : "red"}>
                 {t.type === "Income" ? "+" : "-"} ₹{t.amount}
               </p>
-              <button onClick={() => handleEdit(t)}>✏</button>
-              <button onClick={() => dispatch(deleteTransaction(t.id))}>🗑</button>
+              <button onClick={() => handleEdit(t)}>🖊️</button>
+              <button onClick={() => dispatch(deleteTransaction(t.id))}>🗑️</button>
             </div>
           </li>
         ))}
