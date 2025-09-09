@@ -5,10 +5,9 @@ function Form({ data, setdata, editing, setEditing }) {
   const [formdata, setformdata] = useState({
     title: "",
     price: "",
-    image: "" // only single image URL
+    image: "" 
   });
 
-  // Load product data in form when editing
   useEffect(() => {
     if (editing) {
       setformdata({
@@ -31,9 +30,8 @@ function Form({ data, setdata, editing, setEditing }) {
   try {
     const res = await addData(formdata);
 
-    // ✅ Check for 200 or 201 (DummyJSON usually gives 201)
     if (res.status === 200 || res.status === 201) {
-      setdata([...data, res.data]); // add new product in local state
+      setdata([...data, res.data]);
       setformdata({ title: "", price: "", image: "" });
     } else {
       console.log("Add failed, response:", res);
@@ -51,7 +49,7 @@ function Form({ data, setdata, editing, setEditing }) {
           p.id === editing.id ? { ...p, ...res.data } : p
         );
         setdata(updatedList);
-        setEditing(null); // reset edit mode
+        setEditing(null); 
         setformdata({ title: "", price: "", image: "" });
       }
     } catch (error) {
@@ -103,3 +101,4 @@ function Form({ data, setdata, editing, setEditing }) {
 }
 
 export default Form;
+
